@@ -3,7 +3,7 @@
 require 'aws-sdk'
 require 'yaml'
 
-@config = YAML.load(File.read('onboard.yml'))
+@config = YAML.load(File.read('config.yml'))
 
 Aws.config.update({
   region: @config['region'],
@@ -117,6 +117,9 @@ regions.each do |region|
         abort("ConfigService: Error Attaching Inline Policy to IAM Role: #{config_role_name}")
       end
   end
+
+  # Wait for IAM Role to be Available
+  sleep 30
 
   #################################
   # ConfigService Region Recorder #
