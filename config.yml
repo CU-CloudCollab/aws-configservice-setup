@@ -1,0 +1,10 @@
+# Global
+profile:          'my_aws_cli_profile'
+account_number:   '01234567890123'
+region:           'us-east-1'
+
+# ConfigService
+configservice_s3_bucket_name: 'config-bucket'
+configservice_sns_topic_name: 'config-topic'
+configservice_iam_role_name:  'config-role'
+
